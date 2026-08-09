@@ -13,8 +13,8 @@ The tool provides AI agents access to real-time Stockholms public transport data
 The tool gets its data from [SL](https://sl.se/), the Stockholm public transport company. 
 
 - Translation of SL's data model, to a format that AI chatbots understand, basically by simplifying data to essential information.
-- Supporting this as Model Context Protocol (MCP) server.
-- Support for [Open WebUI](https://openwebui.com/), with preconfigured [MCPO proxy](https://github.com/open-webui/mcpo).
+
+- Supporting this as a Model Context Protocol (MCP) server.
 - Deployment with Docker Compose
 
 # Why this tool? 
@@ -48,19 +48,19 @@ To get this project running you will need a Linux box with Docker, for example i
 ## Installation instructions
 - Get a Linux box with Docker installed.
 - Clone this repository
-- Edit file file `config.json` in directory `docker/mcpo-config`. Change the IP address to the IP address of your Linux box.  
+- Edit the file `config.json` and update it with your server details:
 ```
 {
   "mcpServers": {
-	"stockholm-public-transport": {
+    "stockholm-public-transport": {
       "type": "sse",
       "url": "http://<your-ip-here>:18107/api/v1/sse"
     }
   }
 }
 ```
-- Start the containers by executing the command `docker compose up`
-- This will start a Spring application in Java as well as MCPO proxy. MCPO is a proxy from MCP to OpenAI API.
+
+
 - Keep the docker running in the background to observe the logs.
 - Optionally, you can also start the container with
   - `docker compose up -d` and then
