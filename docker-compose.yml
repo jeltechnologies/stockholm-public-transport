@@ -1,0 +1,8 @@
+services:
+    stockholm-public-transport-mcp:
+        build: .
+        ports:
+            - 18107:18107
+        restart: unless-stopped
+
+
