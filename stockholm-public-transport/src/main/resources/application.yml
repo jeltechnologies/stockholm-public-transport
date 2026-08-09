@@ -3,6 +3,8 @@ spring:
     name: transporttimes
   jackson:
     default-property-inclusion: non-empty
+    deserialization:
+      fail-on-null-for-primitives: false
   ai:
     mcp:
       server:
@@ -10,8 +12,9 @@ spring:
         version: 1.0.0
         type: sync
         stdio: false
-        sse-endpoint: /api/v1/sse
-        sse-message-endpoint: /api/v1/mcp/
+        protocol: STREAMABLE
+        streamable-http:
+          mcp-endpoint: /api/v1/mcp
         resource-change-notification: true
         tool-change-notification: true
         prompt-change-notification: true

@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-	"stockholm-public-transport": {
-      "type": "sse",
-      "url": "http://192.168.1.5:18107/api/v1/sse"
-    }
-  }
-}
